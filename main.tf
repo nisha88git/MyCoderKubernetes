@@ -21,7 +21,7 @@ data "coder_workspace" "me" {}
 
 resource "kubernetes_pod" "dev" {
   metadata {
-    name      = "ws-${data.coder_workspace.me.template_name}-${data.coder_workspace.me.name}"
+    name      = "ws-${data.coder_workspace.me.user_id}-${data.coder_workspace.me.name}"
     namespace = "default"
     labels = {
       app = "coder-workspace"
